@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMain"
+        android:layout_width="421dp"
+        android:layout_height="75dp"
+        android:background="#D58BC34A"
+        android:clickable="false"
+        android:elevation="4dp"
+        android:longClickable="false"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Utilizando SQLITE"
+        app:logo="@drawable/ic_banco"
+        app:titleMargins="0dp">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/txtCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="84dp"
+        android:text="Cadastro de Clientes"
+        android:textSize="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarMain" />
+
+    <Button
+        android:id="@+id/btnCadastro"
+        android:layout_width="189dp"
+        android:layout_height="74dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="100dp"
+        android:text="Cadastrar"
+        android:drawableEnd="@drawable/ic_cadastro"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCadastro" />
+
+    <Button
+        android:id="@+id/btnListar"
+        android:layout_width="187dp"
+        android:layout_height="74dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="44dp"
+        android:text="Listar"
+        android:drawableEnd="@drawable/ic_lista"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCadastro" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
