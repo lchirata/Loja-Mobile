@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, CadastrarClienteActivity.class);
                 startActivity(i);
-                finish();
             }
 
         });
@@ -36,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, ListarClienteActivity.class);
                 startActivity(i);
-                finish();
             }
         });
 
@@ -45,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        goToEdit();
+                        goToCreateProduct();
                     }
                 }
         );
     }
 
-    private void goToEdit() {
-        // REDIRECT EDIT
+    private void goToCreateProduct() {
+        // REDIRECT CADASTRA PRODUTO
         Intent it = new Intent(MainActivity.this, CadastrarProdutoActivity.class);
         startActivity(it);
     }
