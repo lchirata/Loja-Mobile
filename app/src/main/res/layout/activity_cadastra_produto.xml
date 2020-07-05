@@ -24,8 +24,9 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    // Label Nome Protudo
     <TextView
-        android:id="@+id/txtNomep"
+        android:id="@+id/labelNomeProduto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nome:"
@@ -33,27 +34,41 @@
         tools:layout_editor_absoluteY="117dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarMain" />
-    //nome de produto
-    <EditText
-        android:id="@+id/edtNome"
-        android:layout_width="412dp"
-        android:layout_height="75dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text=""
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomep" />
 
-    //preco
+    // Input Nome Protudo
     <EditText
-        android:id="@+id/edtPreco"
+        android:id="@+id/inputNomeProduto"
         android:layout_width="412dp"
         android:layout_height="75dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomep" />
+        app:layout_constraintTop_toBottomOf="@+id/labelNomeProduto" />
+
+
+    // Label Preco Produto
+    <TextView
+        android:id="@+id/labelPrecoProduto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome:"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="117dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNomeProduto" />
+
+    // Input Preco Produto
+    <EditText
+        android:id="@+id/inputPrecoProduto"
+        android:layout_width="412dp"
+        android:layout_height="75dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelPrecoProduto" />
+
 
     <Button
         android:id="@+id/btnAddProduto"
@@ -63,7 +78,7 @@
         android:layout_marginTop="76dp"
         android:text="Adicionar Produto"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+        app:layout_constraintTop_toBottomOf="@+id/inputPrecoProduto" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

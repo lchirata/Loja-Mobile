@@ -35,9 +35,8 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
         btnAdicionarProduto.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                EditText nome = (EditText) findViewById(R.id.edtNomep);
-                EditText preco = (EditText) findViewById(R.id.edtPreco);
-
+                EditText nome = (EditText) findViewById(R.id.inputNomeProduto);
+                EditText preco = (EditText) findViewById(R.id.inputPrecoProduto);
 
                 String r = banco.insert(nome.getText().toString(), preco.getText().toString());
 
