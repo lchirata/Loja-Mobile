@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnCadastro = null;
     Button btnListar = null;
+    Button btnProduto = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnCadastro = (Button) findViewById(R.id.btnCadastro);
-
         btnListar = (Button) findViewById(R.id.btnListar);
+        btnProduto = (Button) findViewById(R.id.btnProduto);
 
         btnCadastro.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -37,5 +39,22 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        btnProduto = findViewById(R.id.btnProduto);
+        btnProduto.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        goToEdit();
+                    }
+                }
+        );
     }
+
+    private void goToEdit() {
+        // REDIRECT EDIT
+        Intent it = new Intent(MainActivity.this, CadastrarProdutoActivity.class);
+        startActivity(it);
+    }
+
 }

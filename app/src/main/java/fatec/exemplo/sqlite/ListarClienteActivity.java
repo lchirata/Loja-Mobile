@@ -76,4 +76,6 @@ public class ListarClienteActivity extends Activity {
 
     }
 
+    public static class CadastrarProdutoActivity {
+    }
 }

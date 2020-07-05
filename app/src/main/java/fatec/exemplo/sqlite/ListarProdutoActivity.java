@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
@@ -22,13 +24,18 @@ public class ListarProdutoActivity extends Activity {
 
     private SimpleCursorAdapter adapter;
 
+
     final String[] from = new String[] { BancoDeDados.ID,
-            BancoDeDados.NOME, BancoDeDados.ENDERECO, BancoDeDados.IDADE };
+            BancoDeDados.NOMEP, BancoDeDados.PRECO };
 
     final int[] to = new int[] { R.id.id, R.id.nome, R.id.endereco, R.id.idade };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Toast.makeText(getApplicationContext(), " Teste !!", Toast.LENGTH_LONG).show();
+
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.fragmento_lista_vazia);
@@ -76,4 +83,9 @@ public class ListarProdutoActivity extends Activity {
 
     }
 
+
+
+
+
 }
+

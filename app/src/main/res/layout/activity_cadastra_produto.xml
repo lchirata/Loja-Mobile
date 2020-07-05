@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".CadastrarProdutoActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarMain"
@@ -17,58 +17,53 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:logo="@drawable/ic_banco"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="Utilizando SQLITE"
+        app:title="Cadastrar Produto"
+        app:logo="@drawable/ic_cliente"
         app:titleMargins="0dp">
 
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
-        android:id="@+id/txtCadastro"
+        android:id="@+id/txtNomep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="84dp"
-        android:text="Cadastro de Clientes"
-        android:textSize="32dp"
+        android:text="Nome:"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="117dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarMain" />
+    //nome de produto
+    <EditText
+        android:id="@+id/edtNome"
+        android:layout_width="412dp"
+        android:layout_height="75dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomep" />
+
+    //preco
+    <EditText
+        android:id="@+id/edtPreco"
+        android:layout_width="412dp"
+        android:layout_height="75dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomep" />
 
     <Button
-        android:id="@+id/btnCadastro"
-        android:layout_width="189dp"
-        android:layout_height="74dp"
-        android:layout_marginLeft="92dp"
-        android:layout_marginTop="100dp"
-        android:drawableEnd="@drawable/ic_cadastro"
-        android:text="Cadastrar"
+        android:id="@+id/btnAddProduto"
+        android:layout_width="302dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="76dp"
+        android:text="Adicionar Produto"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCadastro" />
-
-    <Button
-        android:id="@+id/btnListar"
-        android:layout_width="187dp"
-        android:layout_height="74dp"
-        android:layout_marginLeft="92dp"
-        android:layout_marginTop="44dp"
-        android:drawableEnd="@drawable/ic_lista"
-        android:text="Listar"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCadastro" />
-
-    <Button
-        android:id="@+id/btnProduto"
-        android:layout_width="187dp"
-        android:layout_height="74dp"
-        android:layout_marginLeft="92dp"
-        android:layout_marginTop="44dp"
-        android:drawableEnd="@drawable/ic_lista"
-        android:text="Produtos"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnListar" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/edtNome" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.text.Editable;
 
 import java.util.ArrayList;
 
@@ -72,7 +73,7 @@ public class BancoDadosGerenciador {
         database.delete(BancoDeDados.TABELA, BancoDeDados.ID + "=" + _id, null);
     }
 
-    public String novoProduto(String nomep, String preco) {
+    public String insert (String nomep, String preco) {
 
         long resultado;
         ContentValues valores = new ContentValues();
@@ -88,6 +89,9 @@ public class BancoDadosGerenciador {
         }
     }
 
+
+//    public String insert(String toString, Editable text) {
+//    }
 
     public Cursor listaProdutos() {
         String[] columns = new String[] { BancoDeDados.IDP, BancoDeDados.NOMEP, BancoDeDados.PRECO };
@@ -142,4 +146,5 @@ public class BancoDadosGerenciador {
         return cursor;
 
     }
+
 }
