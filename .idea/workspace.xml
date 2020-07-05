@@ -15,14 +15,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fatec/exemplo/sqlite/CadastrarProdutoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fatec/exemplo/sqlite/CadastrarProdutoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fatec/exemplo/sqlite/banco/BancoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fatec/exemplo/sqlite/banco/BancoDeDados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_cadastra_produto.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cadastra_produto.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,5 +155,21 @@
       <screen x="59" y="27" width="1307" height="741" />
     </state>
     <state x="553" y="289" width="308" height="214" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/59.27.1307.741@59.27.1307.741" timestamp="1593990758102" />
+    <state width="1261" height="268" key="GridCell.Tab.0.bottom" timestamp="1593991645704">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state width="1261" height="268" key="GridCell.Tab.0.bottom/59.27.1307.741@59.27.1307.741" timestamp="1593991645704" />
+    <state width="1261" height="268" key="GridCell.Tab.0.center" timestamp="1593991645704">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state width="1261" height="268" key="GridCell.Tab.0.center/59.27.1307.741@59.27.1307.741" timestamp="1593991645704" />
+    <state width="1261" height="268" key="GridCell.Tab.0.left" timestamp="1593991645703">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state width="1261" height="268" key="GridCell.Tab.0.left/59.27.1307.741@59.27.1307.741" timestamp="1593991645703" />
+    <state width="1261" height="268" key="GridCell.Tab.0.right" timestamp="1593991645704">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state width="1261" height="268" key="GridCell.Tab.0.right/59.27.1307.741@59.27.1307.741" timestamp="1593991645704" />
   </component>
 </project>

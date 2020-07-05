@@ -30,13 +30,11 @@ public class BancoDeDados extends SQLiteOpenHelper {
     public static final String IDCLINTE = "id_compra";
     public static final String IDPRODUTO = "id_produto";
 
-
-
     // Database Information
     static final String DB_NAME = "exemplo_cliente.db";
 
     // database version
-    static final int DB_VERSION = 1;
+    static final int DB_VERSION = 2;
 
 
     public BancoDeDados(Context context) {
@@ -46,7 +44,7 @@ public class BancoDeDados extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String sql = "CREATE TABLE "+TABELA +
+        String sql = "CREATE TABLE IF NOT EXISTS "+TABELA +
                 "( " + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 NOME + " TEXT, " +
                 ENDERECO + " TEXT, " +
@@ -54,13 +52,13 @@ public class BancoDeDados extends SQLiteOpenHelper {
         db.execSQL(sql);
 
 
-        String _sql = "CREATE TABLE "+PRODUTO +
+        String _sql = "CREATE TABLE IF NOT EXISTS "+PRODUTO +
                 "( " + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 NOMEP + " TEXT, " +
                 PRECO + " TEXT ) ";
         db.execSQL(_sql);
 
-        String sql_ = "CREATE TABLE "+PRODUTO_CLIENTE +
+        String sql_ = "CREATE TABLE IF NOT EXISTS "+PRODUTO_CLIENTE +
                 "( " + IDCOMPRA + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                  IDCLINTE + " TEXT, " +
                 IDPRODUTO + " TEXT ) " +
