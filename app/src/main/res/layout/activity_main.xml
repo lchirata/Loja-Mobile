@@ -24,60 +24,66 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/txtCadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="84dp"
-        android:text="Cadastros"
-        android:textSize="32dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarMain" />
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnCadastro"
-        android:layout_width="189dp"
-        android:layout_height="74dp"
-        android:layout_marginLeft="92dp"
-        android:layout_marginTop="100dp"
-        android:drawableEnd="@drawable/ic_cadastro"
-        android:text="Cadastrar Clinete"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCadastro" />
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnListar"
-        android:layout_width="187dp"
-        android:layout_height="74dp"
-        android:layout_marginLeft="92dp"
-        android:layout_marginTop="44dp"
-        android:drawableEnd="@drawable/ic_lista"
-        android:text="Listar Cliente"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCadastro" />
+                <Button
+                    android:id="@+id/btnCadastro"
+                    android:layout_width="189dp"
+                    android:layout_height="74dp"
+                    android:layout_marginLeft="92dp"
+                    android:layout_marginTop="100dp"
+                    android:drawableEnd="@drawable/ic_cadastro"
+                    android:text="Cadastrar Clinete"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCadastro" />
 
-    <Button
-        android:id="@+id/btnProduto"
-        android:layout_width="187dp"
-        android:layout_height="74dp"
-        android:layout_marginLeft="92dp"
-        android:layout_marginTop="44dp"
-        android:drawableEnd="@drawable/ic_cadastro"
-        android:text="Cadastrar Produtos"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnListar" />
+                <Button
+                    android:id="@+id/btnListar"
+                    android:layout_width="187dp"
+                    android:layout_height="74dp"
+                    android:layout_marginLeft="92dp"
+                    android:layout_marginTop="44dp"
+                    android:drawableEnd="@drawable/ic_lista"
+                    android:text="Listar Cliente"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnCadastro" />
 
-    <Button
-        android:id="@+id/btnListaProduto"
-        android:layout_width="187dp"
-        android:layout_height="74dp"
-        android:layout_marginLeft="92dp"
-        android:layout_marginTop="44dp"
-        android:drawableEnd="@drawable/ic_lista"
-        android:text="Lista Produtos"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnProduto" />
+                <Button
+                    android:id="@+id/btnProduto"
+                    android:layout_width="187dp"
+                    android:layout_height="74dp"
+                    android:layout_marginLeft="92dp"
+                    android:layout_marginTop="44dp"
+                    android:drawableEnd="@drawable/ic_cadastro"
+                    android:text="Cadastrar Produtos"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnListar" />
+
+                <Button
+                    android:id="@+id/btnListaProduto"
+                    android:layout_width="187dp"
+                    android:layout_height="74dp"
+                    android:layout_marginLeft="92dp"
+                    android:layout_marginTop="44dp"
+                    android:drawableEnd="@drawable/ic_lista"
+                    android:text="Lista Produtos"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnProduto" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
