@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="84dp"
-        android:text="Cadastro de Clientes"
+        android:text="Cadastros"
         android:textSize="32dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarMain" />
@@ -42,7 +42,7 @@
         android:layout_marginLeft="92dp"
         android:layout_marginTop="100dp"
         android:drawableEnd="@drawable/ic_cadastro"
-        android:text="Cadastrar"
+        android:text="Cadastrar Clinete"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCadastro" />
 
@@ -53,7 +53,7 @@
         android:layout_marginLeft="92dp"
         android:layout_marginTop="44dp"
         android:drawableEnd="@drawable/ic_lista"
-        android:text="Listar"
+        android:text="Listar Cliente"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCadastro" />
 
@@ -63,12 +63,21 @@
         android:layout_height="74dp"
         android:layout_marginLeft="92dp"
         android:layout_marginTop="44dp"
-        android:drawableEnd="@drawable/ic_lista"
-        android:text="Produtos"
+        android:drawableEnd="@drawable/ic_cadastro"
+        android:text="Cadastrar Produtos"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnListar" />
 
-
+    <Button
+        android:id="@+id/btnListaProduto"
+        android:layout_width="187dp"
+        android:layout_height="74dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="44dp"
+        android:drawableEnd="@drawable/ic_lista"
+        android:text="Lista Produtos"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnProduto" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnCadastro = null;
     Button btnListar = null;
-    Button btnProduto = null;
+    Button btnCadastroProduto = null;
+    Button btnListaProduto = null;
 
 
     @Override
@@ -21,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
         btnCadastro = (Button) findViewById(R.id.btnCadastro);
         btnListar = (Button) findViewById(R.id.btnListar);
-        btnProduto = (Button) findViewById(R.id.btnProduto);
+        btnCadastroProduto = (Button) findViewById(R.id.btnProduto);
+        btnListaProduto = (Button) findViewById(R.id.btnListaProduto);
 
         btnCadastro.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -38,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnProduto = findViewById(R.id.btnProduto);
-        btnProduto.setOnClickListener(
+        btnCadastroProduto = findViewById(R.id.btnProduto);
+        btnCadastroProduto.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -47,11 +49,30 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        //btnListaProduto = findViewById(R.id.btnListaProduto);
+        btnListaProduto.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        goToListProduct();
+                    }
+                }
+        );
+
+
+
     }
 
     private void goToCreateProduct() {
         // REDIRECT CADASTRA PRODUTO
         Intent it = new Intent(MainActivity.this, CadastrarProdutoActivity.class);
+        startActivity(it);
+    }
+
+    private void goToListProduct() {
+        // REDIRECT Lista PRODUTO
+        Intent it = new Intent(MainActivity.this, ListarProdutoActivity.class);
         startActivity(it);
     }
 
