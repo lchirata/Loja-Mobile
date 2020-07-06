@@ -52,6 +52,25 @@ public class ListarProdutoActivity extends Activity {
         listView.setAdapter(adapter);
 
         // OnCLickListiner For List Items
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                TextView idProduto = (TextView) view.findViewById(R.id.idProduto);
+                TextView nomeProduto = (TextView) view.findViewById(R.id.nomeProduto);
+                TextView precoProduto = (TextView) view.findViewById(R.id.precoProduto);
+
+                String _idProduto = idProduto.getText().toString();
+                String _nomeProduto = nomeProduto.getText().toString();
+                String _precoProduto = precoProduto.getText().toString();
+
+                String msg = dbManager.comprarProduto(_idProduto, "1");
+
+                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+
+
+            }
+        });
 
 
     }

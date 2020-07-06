@@ -23,7 +23,7 @@ public class BancoDeDados extends SQLiteOpenHelper {
     public static final String NOMEP = "nome";
     public static final String PRECO = "preco";
 
-    public static final String PRODUTO_CLIENTE  = "cliente";
+    public static final String PRODUTO_CLIENTE  = "produto_cliente";
 
     // Table columns
     public static final String IDCOMPRA = "_id";
@@ -34,7 +34,7 @@ public class BancoDeDados extends SQLiteOpenHelper {
     static final String DB_NAME = "exemplo_cliente.db";
 
     // database version
-    static final int DB_VERSION = 2;
+    static final int DB_VERSION = 3;
 
 
     public BancoDeDados(Context context) {

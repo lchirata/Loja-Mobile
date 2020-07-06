@@ -99,10 +99,6 @@ public class BancoDadosGerenciador {
         }
     }
 
-
-//    public String insert(String toString, Editable text) {
-//    }
-
     public Cursor listaProdutos() {
         String[] columns = new String[] { BancoDeDados.IDP, BancoDeDados.NOMEP, BancoDeDados.PRECO };
         Cursor cursor = database.query(BancoDeDados.PRODUTO, columns, null,
@@ -115,22 +111,17 @@ public class BancoDadosGerenciador {
 
     public String comprarProduto(String idProduto, String idCliente){
 
-
-        // Pegar nome produto
-
-        // Pegar nome cliente
-
         long resultado;
         ContentValues valores = new ContentValues();
         valores.put(BancoDeDados.IDCLINTE, idCliente);
         valores.put(BancoDeDados.IDPRODUTO, idProduto);
 
-        resultado = database.insert(BancoDeDados.TABELA, null, valores);
+        resultado = database.insert(BancoDeDados.PRODUTO_CLIENTE, null, valores);
 
         if (resultado == -1) {
             return "Erro ao finalizar compra.";
         } else {
-            return "Compra realizada com sucesso !";
+            return "Compra realizada com sucesso!";
         }
     }
 
@@ -156,5 +147,6 @@ public class BancoDadosGerenciador {
         return cursor;
 
     }
+
 
 }
