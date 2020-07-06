@@ -25,10 +25,9 @@ public class ListarProdutoActivity extends Activity {
     private SimpleCursorAdapter adapter;
 
 
-    final String[] from = new String[] { BancoDeDados.ID,
-            BancoDeDados.NOMEP, BancoDeDados.PRECO };
+    final String[] from = new String[] { BancoDeDados.IDP,  BancoDeDados.NOMEP, BancoDeDados.PRECO };
 
-    final int[] to = new int[] { R.id.id, R.id.nome, R.id.endereco, R.id.idade };
+    final int[] to = new int[] { R.id.idProduto, R.id.nomeProduto, R.id.precoProduto };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,44 +41,18 @@ public class ListarProdutoActivity extends Activity {
 
         dbManager = new BancoDadosGerenciador(this);
         dbManager.open();
-        Cursor cursor = dbManager.fetch();
+        Cursor cursor = dbManager.fetchProduto();
 
         listView = (ListView) findViewById(R.id.list_view);
         listView.setEmptyView(findViewById(R.id.empty));
 
-        adapter = new SimpleCursorAdapter(this, R.layout.activity_lista_cliente, cursor, from, to, 0);
+        adapter = new SimpleCursorAdapter(this, R.layout.activity_lista_produto, cursor, from, to, 0);
         adapter.notifyDataSetChanged();
 
         listView.setAdapter(adapter);
 
         // OnCLickListiner For List Items
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView txtId = (TextView) view.findViewById(R.id.id);
-                TextView txtNome = (TextView) view.findViewById(R.id.nome);
 
-                TextView txtEndereco = (TextView) view.findViewById(R.id.endereco);
-                TextView txtIdade = (TextView) view.findViewById(R.id.idade);
-
-                String idd = txtId.getText().toString();
-                String nome = txtNome.getText().toString();
-                String endereco = txtEndereco.getText().toString();
-                String idade = txtIdade.getText().toString();
-
-                Toast.makeText(getApplicationContext(), nome, Toast.LENGTH_LONG).show();
-
-                Intent alterarIntent = new Intent(getApplicationContext(), AlterarClienteActivity.class);
-                alterarIntent.putExtra("nome", nome);
-                alterarIntent.putExtra("endereco", endereco);
-                alterarIntent.putExtra("idade", idade);
-                alterarIntent.putExtra("id", idd);
-
-                startActivity(alterarIntent);
-
-                //Toast.makeText(getApplicationContext(), nome + " " + idade, Toast.LENGTH_LONG).show();
-            }
-        });
 
     }
 

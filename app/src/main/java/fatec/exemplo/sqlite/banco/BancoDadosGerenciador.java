@@ -59,6 +59,16 @@ public class BancoDadosGerenciador {
         return cursor;
     }
 
+    public Cursor fetchProduto() {
+        String[] columns = new String[] { BancoDeDados.IDP, BancoDeDados.NOMEP, BancoDeDados.PRECO };
+        Cursor cursor = database.query(BancoDeDados.PRODUTO, columns, null,
+                null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
+
     public int update(long _id, String nome, String endereco, String idade) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(BancoDeDados.NOME, nome);
