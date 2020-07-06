@@ -31,6 +31,9 @@
         <activity android:name=".CadastrarProdutoActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
+        <activity android:name=".ListarComprasActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnListar = null;
     Button btnCadastroProduto = null;
     Button btnListaProduto = null;
+    Button btnListaCompras = null;
 
 
     @Override
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         btnListar = (Button) findViewById(R.id.btnListar);
         btnCadastroProduto = (Button) findViewById(R.id.btnProduto);
         btnListaProduto = (Button) findViewById(R.id.btnListaProduto);
+        btnListaCompras = (Button) findViewById(R.id.btnListaCompras);
 
         btnCadastro.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -60,8 +62,14 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
-
-
+        btnListaCompras.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        goToBuy();
+                    }
+                }
+        );
     }
 
     private void goToCreateProduct() {
@@ -76,4 +84,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(it);
     }
 
+    private void goToBuy() {
+        // REDIRECT COMPRAS
+        Intent it = new Intent(MainActivity.this, ListarComprasActivity.class);
+        startActivity(it);
+    }
 }

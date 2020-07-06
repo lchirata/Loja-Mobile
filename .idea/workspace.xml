@@ -11,16 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b4ceaac-d20d-40ed-a673-d90092e72e32" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/fatec/exemplo/sqlite/ListarComprasActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_lista_compras.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fatec/exemplo/sqlite/ListarProdutoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fatec/exemplo/sqlite/ListarProdutoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fatec/exemplo/sqlite/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fatec/exemplo/sqlite/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/fatec/exemplo/sqlite/banco/BancoDadosGerenciador.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fatec/exemplo/sqlite/banco/BancoDadosGerenciador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/fatec/exemplo/sqlite/banco/BancoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fatec/exemplo/sqlite/banco/BancoDeDados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +75,16 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="fatec.exemplo.sqlite" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -155,22 +164,34 @@
       <screen x="59" y="27" width="1307" height="741" />
     </state>
     <state x="553" y="289" width="308" height="214" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/59.27.1307.741@59.27.1307.741" timestamp="1593990758102" />
-    <state width="1261" height="403" key="GridCell.Tab.0.bottom" timestamp="1594001496984">
+    <state x="481" y="140" width="453" height="512" key="FileChooserDialogImpl" timestamp="1594003402201">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
-    <state width="1261" height="403" key="GridCell.Tab.0.bottom/59.27.1307.741@59.27.1307.741" timestamp="1594001496984" />
-    <state width="1261" height="403" key="GridCell.Tab.0.center" timestamp="1594001496983">
+    <state x="481" y="140" width="453" height="512" key="FileChooserDialogImpl/59.27.1307.741@59.27.1307.741" timestamp="1594003402201" />
+    <state width="1261" height="-37" key="GridCell.Tab.0.bottom" timestamp="1594003839789">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
-    <state width="1261" height="403" key="GridCell.Tab.0.center/59.27.1307.741@59.27.1307.741" timestamp="1594001496983" />
-    <state width="1261" height="403" key="GridCell.Tab.0.left" timestamp="1594001496983">
+    <state width="1261" height="-37" key="GridCell.Tab.0.bottom/59.27.1307.741@59.27.1307.741" timestamp="1594003839789" />
+    <state width="1261" height="-37" key="GridCell.Tab.0.center" timestamp="1594003839788">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
-    <state width="1261" height="403" key="GridCell.Tab.0.left/59.27.1307.741@59.27.1307.741" timestamp="1594001496983" />
-    <state width="1261" height="403" key="GridCell.Tab.0.right" timestamp="1594001496984">
+    <state width="1261" height="-37" key="GridCell.Tab.0.center/59.27.1307.741@59.27.1307.741" timestamp="1594003839788" />
+    <state width="1261" height="-37" key="GridCell.Tab.0.left" timestamp="1594003839787">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
-    <state width="1261" height="403" key="GridCell.Tab.0.right/59.27.1307.741@59.27.1307.741" timestamp="1594001496984" />
+    <state width="1261" height="-37" key="GridCell.Tab.0.left/59.27.1307.741@59.27.1307.741" timestamp="1594003839787" />
+    <state width="1261" height="-37" key="GridCell.Tab.0.right" timestamp="1594003839788">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state width="1261" height="-37" key="GridCell.Tab.0.right/59.27.1307.741@59.27.1307.741" timestamp="1594003839788" />
+    <state x="411" y="273" width="592" height="247" key="ScreenshotRecorder.Options.Dimensions" timestamp="1594003383369">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state x="411" y="273" width="592" height="247" key="ScreenshotRecorder.Options.Dimensions/59.27.1307.741@59.27.1307.741" timestamp="1594003383369" />
+    <state x="146" y="27" width="1122" height="739" key="ScreenshotViewer.Dimensions" timestamp="1594003419448">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state x="146" y="27" width="1122" height="739" key="ScreenshotViewer.Dimensions/59.27.1307.741@59.27.1307.741" timestamp="1594003419448" />
     <state x="368" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1594000157694">
       <screen x="59" y="27" width="1307" height="741" />
     </state>

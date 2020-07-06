@@ -80,6 +80,17 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/btnProduto" />
 
+                <Button
+                    android:id="@+id/btnListaCompras"
+                    android:layout_width="187dp"
+                    android:layout_height="74dp"
+                    android:layout_marginLeft="92dp"
+                    android:layout_marginTop="44dp"
+                    android:drawableEnd="@drawable/ic_cliente"
+                    android:text="Minhas Compras"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnListaProduto" />
+
             </LinearLayout>
         </HorizontalScrollView>
     </ScrollView>

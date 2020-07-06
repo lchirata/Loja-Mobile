@@ -125,7 +125,7 @@ public class BancoDadosGerenciador {
         }
     }
 
-    public Cursor historicoCompra(){
+    public Cursor historicoCompra(int clienteId){
         String historico[][] = new String[10][2];
         ArrayList<String> _cliente = new ArrayList<String>();
         ArrayList<String> _produto = new ArrayList<String>();
@@ -137,8 +137,7 @@ public class BancoDadosGerenciador {
         String query = "select cliente.id, cliente.nome, produto.idp, produto.nomep from cliente, produto where cliente.id and produto.id";
         database.rawQuery(query, new String[] {});
 
-        String[] columns = new String[] { BancoDeDados.ID, BancoDeDados.NOME, BancoDeDados.ENDERECO,
-                BancoDeDados.IDADE };
+        String[] columns = new String[] { BancoDeDados.IDCOMPRA, BancoDeDados.IDCLINTE, BancoDeDados.IDPRODUTO };
         Cursor cursor = database.query(BancoDeDados.PRODUTO_CLIENTE,  columns, null,
                 null, null, null, null);
         if (cursor != null) {
@@ -147,6 +146,20 @@ public class BancoDadosGerenciador {
         return cursor;
 
     }
+
+    public Cursor historicoCompra2(int clienteId){
+
+        String selectCliente = BancoDeDados.IDCLINTE + " = " + clienteId;
+
+        String[] columns = new String[] { BancoDeDados.IDCOMPRA, BancoDeDados.IDCLINTE, BancoDeDados.IDPRODUTO };
+        Cursor cursor = database.query(BancoDeDados.PRODUTO_CLIENTE,  columns, selectCliente,
+                null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
+
 
 
 }

@@ -34,7 +34,7 @@ public class BancoDeDados extends SQLiteOpenHelper {
     static final String DB_NAME = "exemplo_cliente.db";
 
     // database version
-    static final int DB_VERSION = 3;
+    static final int DB_VERSION = 5;
 
 
     public BancoDeDados(Context context) {
