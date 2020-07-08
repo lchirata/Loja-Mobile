@@ -160,6 +160,23 @@ public class BancoDadosGerenciador {
         return cursor;
     }
 
+    public int login(String nome, String senha) {
 
+        String selectLogin = BancoDeDados.NOME + " = '" + nome + "' AND " + BancoDeDados.IDADE + " = '" + senha + "'";
+
+        String[] columns = new String[] { BancoDeDados.ID, BancoDeDados.NOME, BancoDeDados.ENDERECO,
+                BancoDeDados.IDADE };
+        Cursor cursor = database.query(BancoDeDados.TABELA, columns, selectLogin,
+                null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+            if (!cursor.isAfterLast()) {
+                String data = cursor.getString(cursor.getColumnIndex(BancoDeDados.ID));
+                return Integer.valueOf(data);
+            }
+        }
+
+        return 0;
+    }
 
 }

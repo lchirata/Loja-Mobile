@@ -15,6 +15,10 @@ public class MainActivity extends AppCompatActivity {
     Button btnListaProduto = null;
     Button btnListaCompras = null;
 
+    // Bundle bundle = getIntent().getExtras();
+    // int id = bundle.getInt("id");
+    // this.getUsuario(id);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
