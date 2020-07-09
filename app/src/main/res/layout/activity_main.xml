@@ -36,12 +36,25 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/nomeUsuarioHome"
+                    android:layout_width="116dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="6dp"
+                    android:padding="3dp"
+                    android:visibility="visible"
+                    android:layout_marginTop="80dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCadastro" />
+
                 <Button
                     android:id="@+id/btnCadastro"
                     android:layout_width="189dp"
                     android:layout_height="74dp"
                     android:layout_marginLeft="92dp"
-                    android:layout_marginTop="100dp"
+                    android:layout_marginTop="10dp"
                     android:drawableEnd="@drawable/ic_cadastro"
                     android:text="Cadastrar Clinete"
                     app:layout_constraintLeft_toLeftOf="parent"

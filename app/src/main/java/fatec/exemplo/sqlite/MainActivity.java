@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import fatec.exemplo.sqlite.banco.BancoDadosGerenciador;
@@ -30,14 +32,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // this.getUsuario(id);
-        // this.bemVindo();
+        dbManager = new BancoDadosGerenciador(this);
+        dbManager.open();
 
         btnCadastro = (Button) findViewById(R.id.btnCadastro);
         btnListar = (Button) findViewById(R.id.btnListar);
         btnCadastroProduto = (Button) findViewById(R.id.btnProduto);
         btnListaProduto = (Button) findViewById(R.id.btnListaProduto);
         btnListaCompras = (Button) findViewById(R.id.btnListaCompras);
+
+        TextView nomeUsuarioHome = (TextView) findViewById(R.id.nomeUsuarioHome);
+
+        Bundle bundle = getIntent().getExtras();
+        final int idCliente = bundle.getInt("id");
+        String username = this.dbManager.getUsernameById(idCliente);
+        nomeUsuarioHome.setText(username);
 
         btnCadastro.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

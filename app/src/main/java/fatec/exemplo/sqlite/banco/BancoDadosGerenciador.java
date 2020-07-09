@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.Editable;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -215,5 +216,21 @@ public class BancoDadosGerenciador {
         return 0;
     }
 
+    public String getUsernameById(int id) {
+
+        String query = BancoDeDados.ID + " = " + id;
+
+        String[] columns = new String[] { BancoDeDados.ID, BancoDeDados.NOME, BancoDeDados.ENDERECO,
+                BancoDeDados.IDADE };
+        Cursor cursor = database.query(BancoDeDados.TABELA, columns, query,
+                null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+            String username = cursor.getString(1);
+            return username;
+        }
+
+        return "";
+    }
 
 }
