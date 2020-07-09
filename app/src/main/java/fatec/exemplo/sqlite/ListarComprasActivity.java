@@ -22,7 +22,7 @@ public class ListarComprasActivity extends Activity {
     private SimpleCursorAdapter adapter;
 
 
-    final String[] from = new String[] { BancoDeDados.IDCOMPRA,  BancoDeDados.IDCLINTE, BancoDeDados.IDPRODUTO };
+    final String[] from = new String[] { BancoDeDados.IDP,  BancoDeDados.NOMEP, BancoDeDados.PRECO };
 
     final int[] to = new int[] { R.id.idProduto, R.id.nomeProduto, R.id.precoProduto };
 
@@ -34,6 +34,10 @@ public class ListarComprasActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.fragmento_lista_vazia);
+
+        Bundle bundle = getIntent().getExtras();
+        //int id = bundle.getInt("id");
+        final String idCliente = bundle.getString("id");
 
         dbManager = new BancoDadosGerenciador(this);
         dbManager.open();
@@ -60,7 +64,7 @@ public class ListarComprasActivity extends Activity {
                 String _nomeProduto = nomeProduto.getText().toString();
                 String _precoProduto = precoProduto.getText().toString();
 
-                String msg = dbManager.comprarProduto(_idProduto, "1");
+                String msg = dbManager.comprarProduto(_idProduto, idCliente);
 
                 Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
 

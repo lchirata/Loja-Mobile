@@ -1,3 +1,4 @@
+
 package fatec.exemplo.sqlite;
 
 import android.content.Intent;
@@ -21,7 +22,11 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Toast.makeText(getApplicationContext(), " Teste !!", Toast.LENGTH_LONG).show();
+        Bundle bundle = getIntent().getExtras();
+        //int id = bundle.getInt("id");
+        final String idCliente = bundle.getString("id");
+
+        // Toast.makeText(getApplicationContext(), " Teste !!", Toast.LENGTH_LONG).show();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastra_produto);
@@ -41,16 +46,16 @@ public class CadastrarProdutoActivity extends AppCompatActivity {
                 String r = banco.insert(nome.getText().toString(), preco.getText().toString());
 
                 Toast.makeText(getApplicationContext(), r, Toast.LENGTH_LONG).show();
-                returnHome();
 
+                returnHome(idCliente);
             }
 
         });
     }
 
-    public void returnHome() {
-        Intent home_intent = new Intent(getApplicationContext(), MainActivity.class)
-                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    public void returnHome(String idCliente) {
+        Intent home_intent = new Intent(getApplicationContext(), MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        home_intent.putExtra("id", idCliente);
         startActivity(home_intent);
     }
 

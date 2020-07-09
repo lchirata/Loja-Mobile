@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import fatec.exemplo.sqlite.banco.BancoDadosGerenciador;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnCadastroProduto = null;
     Button btnListaProduto = null;
     Button btnListaCompras = null;
+
+    private BancoDadosGerenciador dbManager;
 
     // Bundle bundle = getIntent().getExtras();
     // int id = bundle.getInt("id");
@@ -25,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // this.getUsuario(id);
+        // this.bemVindo();
+
         btnCadastro = (Button) findViewById(R.id.btnCadastro);
         btnListar = (Button) findViewById(R.id.btnListar);
         btnCadastroProduto = (Button) findViewById(R.id.btnProduto);
@@ -33,16 +41,28 @@ public class MainActivity extends AppCompatActivity {
 
         btnCadastro.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, CadastrarClienteActivity.class);
-                startActivity(i);
+                Bundle bundle = getIntent().getExtras();
+                try {
+                    final String id = bundle.getString("id");
+                    Intent i = new Intent(MainActivity.this, CadastrarClienteActivity.class);
+                    i.putExtra("id", id);
+                    startActivity(i);
+                } catch (Exception e) { }
+
             }
 
         });
 
         btnListar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, ListarClienteActivity.class);
-                startActivity(i);
+                Bundle bundle = getIntent().getExtras();
+                try {
+                    final String id = bundle.getString("id");
+                    Intent i = new Intent(MainActivity.this, ListarClienteActivity.class);
+                    i.putExtra("id", id);
+                    startActivity(i);
+                } catch (Exception e) { }
+
             }
         });
 
@@ -51,7 +71,11 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        goToCreateProduct();
+                        Bundle bundle = getIntent().getExtras();
+                        try {
+                            final String id = bundle.getString("id");
+                            goToCreateProduct(id);
+                        } catch (Exception e) { }
                     }
                 }
         );
@@ -61,7 +85,11 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        goToListProduct();
+                        Bundle bundle = getIntent().getExtras();
+                        try {
+                            final String id = bundle.getString("id");
+                            goToListProduct(id);
+                        } catch (Exception e) { }
                     }
                 }
         );
@@ -70,27 +98,47 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        goToBuy();
+                        Bundle bundle = getIntent().getExtras();
+                        //int id = bundle.getInt("id");
+
+                        try {
+                            final String id = bundle.getString("id");
+                            goToBuyed(id);
+                        } catch (Exception e) {
+
+                        }
+
+
                     }
                 }
         );
     }
 
-    private void goToCreateProduct() {
+    private void goToCreateProduct(String id) {
         // REDIRECT CADASTRA PRODUTO
         Intent it = new Intent(MainActivity.this, CadastrarProdutoActivity.class);
+        it.putExtra("id", id);
         startActivity(it);
     }
 
-    private void goToListProduct() {
+    private void goToListProduct(String id) {
         // REDIRECT Lista PRODUTO
         Intent it = new Intent(MainActivity.this, ListarProdutoActivity.class);
+        it.putExtra("id", id);
         startActivity(it);
     }
 
-    private void goToBuy() {
+    private void goToBuyed(String id) {
         // REDIRECT COMPRAS
         Intent it = new Intent(MainActivity.this, ListarComprasActivity.class);
+        it.putExtra("id", id);
         startActivity(it);
     }
+
+    private void bemVindo(String nome){
+        // MOSTRAR MENSAGEM DE BEM VINDO
+        String menssage = "Bem vindo " + nome;
+        Toast.makeText(MainActivity.this, menssage, Toast.LENGTH_LONG).show();
+    }
+
 }

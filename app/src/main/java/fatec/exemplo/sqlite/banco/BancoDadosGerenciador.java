@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.text.Editable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BancoDadosGerenciador {
 
@@ -151,8 +152,43 @@ public class BancoDadosGerenciador {
 
         String selectCliente = BancoDeDados.IDCLINTE + " = " + clienteId;
 
+
+        List<Integer> idsProdutos = new ArrayList<>();
+
         String[] columns = new String[] { BancoDeDados.IDCOMPRA, BancoDeDados.IDCLINTE, BancoDeDados.IDPRODUTO };
         Cursor cursor = database.query(BancoDeDados.PRODUTO_CLIENTE,  columns, selectCliente,
+                null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+
+            do {
+                int id = cursor.getInt(2);
+                idsProdutos.add(id);
+            } while (cursor.moveToNext());
+
+            return this.fetchProdutoByIds(idsProdutos);
+
+
+        }
+        return cursor;
+    }
+
+    public Cursor fetchProdutoByIds(List idsProdutos) {
+
+        String ids = "";
+
+        for (int i = 0; i < idsProdutos.size(); i++) {
+            ids = ids + "" + idsProdutos.get(i);
+
+            if(i < idsProdutos.size() - 1) {
+                ids = ids + ", ";
+            }
+        }
+
+        String queryProduto = "" + BancoDeDados.IDP + " in" + "(" + ids + ")";
+
+        String[] columns = new String[] { BancoDeDados.IDP, BancoDeDados.NOMEP, BancoDeDados.PRECO };
+        Cursor cursor = database.query(BancoDeDados.PRODUTO, columns, queryProduto,
                 null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -178,5 +214,6 @@ public class BancoDadosGerenciador {
 
         return 0;
     }
+
 
 }

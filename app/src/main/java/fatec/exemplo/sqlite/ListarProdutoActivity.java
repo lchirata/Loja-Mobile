@@ -32,12 +32,14 @@ public class ListarProdutoActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Toast.makeText(getApplicationContext(), " Teste !!", Toast.LENGTH_LONG).show();
-
-
+        // Toast.makeText(getApplicationContext(), " Teste !!", Toast.LENGTH_LONG).show();
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.fragmento_lista_vazia);
+
+        Bundle bundle = getIntent().getExtras();
+        //int id = bundle.getInt("id");
+        final String idCliente = bundle.getString("id");
+
 
         dbManager = new BancoDadosGerenciador(this);
         dbManager.open();
@@ -64,7 +66,7 @@ public class ListarProdutoActivity extends Activity {
                 String _nomeProduto = nomeProduto.getText().toString();
                 String _precoProduto = precoProduto.getText().toString();
 
-                String msg = dbManager.comprarProduto(_idProduto, "1");
+                String msg = dbManager.comprarProduto(_idProduto, idCliente);
 
                 Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
 
