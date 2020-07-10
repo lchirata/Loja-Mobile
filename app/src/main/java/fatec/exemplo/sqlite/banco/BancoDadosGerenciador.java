@@ -216,7 +216,7 @@ public class BancoDadosGerenciador {
         return 0;
     }
 
-    public String getUsernameById(int id) {
+    public String getUsernameById(String id) {
 
         String query = BancoDeDados.ID + " = " + id;
 

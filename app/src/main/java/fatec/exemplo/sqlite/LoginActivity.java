@@ -2,6 +2,7 @@ package fatec.exemplo.sqlite;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import fatec.exemplo.sqlite.banco.BancoDadosGerenciador;
+import fatec.exemplo.sqlite.banco.Singleton;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -36,12 +38,17 @@ public class LoginActivity extends AppCompatActivity {
 
                 // LOGIN
                 int idUsuario = banco.login(_nome, _senha);
+                String id = String.valueOf(idUsuario);
+                Log.d("ID Usuario", id);
+                Toast.makeText(getApplicationContext(), id, Toast.LENGTH_LONG).show();
+
+                Singleton.getInstance().setUsuario(id);
 
                 if (idUsuario != 0) {
                     // REDIRECT
                     goToMain(idUsuario);
                 } else {
-                    // APAGA CAMPOS
+                    // FIXME: APAGA CAMPOS
 
                     // (OK) MSG ERRO
                     Toast.makeText(getApplicationContext(), "Login incorreto", Toast.LENGTH_LONG).show();
@@ -53,13 +60,12 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
     }
 
     private void goToMain(int idUsuario) {
         // REDIRECT Main
         Intent it = new Intent(LoginActivity.this, MainActivity.class);
-        it.putExtra("id", idUsuario);
+        // it.putExtra("id", idUsuario);
         startActivity(it);
     }
 }

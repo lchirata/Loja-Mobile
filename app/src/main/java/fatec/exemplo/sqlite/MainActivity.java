@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import fatec.exemplo.sqlite.banco.BancoDadosGerenciador;
+import fatec.exemplo.sqlite.banco.Singleton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // PEGA ID DO USUARIO
+        String idUsuario = Singleton.getInstance().getUsuario();
+        Toast.makeText(getApplicationContext(), idUsuario, Toast.LENGTH_LONG).show();
+
         dbManager = new BancoDadosGerenciador(this);
         dbManager.open();
 
@@ -43,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
         TextView nomeUsuarioHome = (TextView) findViewById(R.id.nomeUsuarioHome);
 
-        Bundle bundle = getIntent().getExtras();
-        final int idCliente = bundle.getInt("id");
-        String username = this.dbManager.getUsernameById(idCliente);
+        // Bundle bundle = getIntent().getExtras();
+        // final int idCliente = bundle.getInt("id");
+        String username = this.dbManager.getUsernameById(idUsuario);
         nomeUsuarioHome.setText(username);
 
         btnCadastro.setOnClickListener(new View.OnClickListener() {
