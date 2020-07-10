@@ -39,9 +39,6 @@ public class LoginActivity extends AppCompatActivity {
                 // LOGIN
                 int idUsuario = banco.login(_nome, _senha);
                 String id = String.valueOf(idUsuario);
-                Log.d("ID Usuario", id);
-                Toast.makeText(getApplicationContext(), id, Toast.LENGTH_LONG).show();
-
                 Singleton.getInstance().setUsuario(id);
 
                 if (idUsuario != 0) {

@@ -32,10 +32,6 @@ public class ListarClienteActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragmento_lista_vazia);
 
-        Bundle bundle = getIntent().getExtras();
-        //int id = bundle.getInt("id");
-        final String idCliente = bundle.getString("id");
-
         dbManager = new BancoDadosGerenciador(this);
         dbManager.open();
         Cursor cursor = dbManager.fetch();
@@ -69,10 +65,7 @@ public class ListarClienteActivity extends Activity {
                 alterarIntent.putExtra("nome", nome);
                 alterarIntent.putExtra("endereco", endereco);
                 alterarIntent.putExtra("idade", idade);
-                // alterarIntent.putExtra("id", idd);
-
-                alterarIntent.putExtra("id", idCliente);
-
+                alterarIntent.putExtra("id", idd);
                 startActivity(alterarIntent);
 
                 //Toast.makeText(getApplicationContext(), nome + " " + idade, Toast.LENGTH_LONG).show();

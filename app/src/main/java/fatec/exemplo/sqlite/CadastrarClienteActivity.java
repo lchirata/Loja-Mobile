@@ -24,10 +24,6 @@ public class CadastrarClienteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
 
-        Bundle bundle = getIntent().getExtras();
-        //int id = bundle.getInt("id");
-        final String idCliente = bundle.getString("id");
-
         btnAdicionarCliente = (Button) findViewById(R.id.btnAddCliente);
 
         banco = new BancoDadosGerenciador(this);
@@ -45,16 +41,15 @@ public class CadastrarClienteActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), r, Toast.LENGTH_LONG).show();
 
-                returnHome(idCliente);
+                returnHome();
 
             }
 
         });
     }
 
-    public void returnHome(String id) {
+    public void returnHome() {
         Intent home_intent = new Intent(getApplicationContext(), MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        home_intent.putExtra("id", id);
         startActivity(home_intent);
     }
 

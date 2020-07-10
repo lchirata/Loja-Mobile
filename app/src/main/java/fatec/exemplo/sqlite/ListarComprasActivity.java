@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import fatec.exemplo.sqlite.banco.BancoDadosGerenciador;
 import fatec.exemplo.sqlite.banco.BancoDeDados;
+import fatec.exemplo.sqlite.banco.Singleton;
 
 public class ListarComprasActivity extends Activity {
 
@@ -29,19 +30,15 @@ public class ListarComprasActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        int clientId = 1;
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.fragmento_lista_vazia);
-
-        Bundle bundle = getIntent().getExtras();
-        //int id = bundle.getInt("id");
-        final String idCliente = bundle.getString("id");
+        final String idUsuario = Singleton.getInstance().getUsuario();
 
         dbManager = new BancoDadosGerenciador(this);
         dbManager.open();
-        Cursor cursor = dbManager.historicoCompra2(clientId);
+
+        int idUsuarioInt = Integer.parseInt(idUsuario);
+        Cursor cursor = dbManager.historicoCompra2(idUsuarioInt);
 
         listView = (ListView) findViewById(R.id.list_view);
         listView.setEmptyView(findViewById(R.id.empty));
@@ -64,11 +61,9 @@ public class ListarComprasActivity extends Activity {
                 String _nomeProduto = nomeProduto.getText().toString();
                 String _precoProduto = precoProduto.getText().toString();
 
-                String msg = dbManager.comprarProduto(_idProduto, idCliente);
+                String msg = dbManager.comprarProduto(_idProduto, idUsuario);
 
                 Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
-
-
             }
         });
 

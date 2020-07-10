@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         // PEGA ID DO USUARIO
         String idUsuario = Singleton.getInstance().getUsuario();
-        Toast.makeText(getApplicationContext(), idUsuario, Toast.LENGTH_LONG).show();
 
         dbManager = new BancoDadosGerenciador(this);
         dbManager.open();
@@ -48,111 +47,75 @@ public class MainActivity extends AppCompatActivity {
 
         TextView nomeUsuarioHome = (TextView) findViewById(R.id.nomeUsuarioHome);
 
-        // Bundle bundle = getIntent().getExtras();
-        // final int idCliente = bundle.getInt("id");
         String username = this.dbManager.getUsernameById(idUsuario);
         nomeUsuarioHome.setText(username);
 
+        // CADASTRA CLIENTE
         btnCadastro.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Bundle bundle = getIntent().getExtras();
-                try {
-                    final String id = bundle.getString("id");
-                    Intent i = new Intent(MainActivity.this, CadastrarClienteActivity.class);
-                    i.putExtra("id", id);
-                    startActivity(i);
-                } catch (Exception e) { }
-
+                Intent i = new Intent(MainActivity.this, CadastrarClienteActivity.class);
+                startActivity(i);
             }
 
         });
 
+        // LISTA CLIENTE
         btnListar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Bundle bundle = getIntent().getExtras();
-                try {
-                    final String id = bundle.getString("id");
-                    Intent i = new Intent(MainActivity.this, ListarClienteActivity.class);
-                    i.putExtra("id", id);
-                    startActivity(i);
-                } catch (Exception e) { }
-
+                Intent i = new Intent(MainActivity.this, ListarClienteActivity.class);
+                startActivity(i);
             }
         });
 
+        // CADASTRAR PRODUTO
         btnCadastroProduto = findViewById(R.id.btnProduto);
         btnCadastroProduto.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Bundle bundle = getIntent().getExtras();
-                        try {
-                            final String id = bundle.getString("id");
-                            goToCreateProduct(id);
-                        } catch (Exception e) { }
+                        goToCreateProduct();
                     }
                 }
         );
 
+        // LISTA PRODUTO
         //btnListaProduto = findViewById(R.id.btnListaProduto);
         btnListaProduto.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Bundle bundle = getIntent().getExtras();
-                        try {
-                            final String id = bundle.getString("id");
-                            goToListProduct(id);
-                        } catch (Exception e) { }
+                        goToListProduct();
                     }
                 }
         );
 
+        // COMPRAS
         btnListaCompras.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Bundle bundle = getIntent().getExtras();
-                        //int id = bundle.getInt("id");
-
-                        try {
-                            final String id = bundle.getString("id");
-                            goToBuyed(id);
-                        } catch (Exception e) {
-
-                        }
-
-
+                        goToBuyed();
                     }
                 }
         );
     }
 
-    private void goToCreateProduct(String id) {
+    private void goToCreateProduct() {
         // REDIRECT CADASTRA PRODUTO
         Intent it = new Intent(MainActivity.this, CadastrarProdutoActivity.class);
-        it.putExtra("id", id);
         startActivity(it);
     }
 
-    private void goToListProduct(String id) {
+    private void goToListProduct() {
         // REDIRECT Lista PRODUTO
         Intent it = new Intent(MainActivity.this, ListarProdutoActivity.class);
-        it.putExtra("id", id);
         startActivity(it);
     }
 
-    private void goToBuyed(String id) {
+    private void goToBuyed() {
         // REDIRECT COMPRAS
         Intent it = new Intent(MainActivity.this, ListarComprasActivity.class);
-        it.putExtra("id", id);
         startActivity(it);
-    }
-
-    private void bemVindo(String nome){
-        // MOSTRAR MENSAGEM DE BEM VINDO
-        String menssage = "Bem vindo " + nome;
-        Toast.makeText(MainActivity.this, menssage, Toast.LENGTH_LONG).show();
     }
 
 }
